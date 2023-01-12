@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+  {{ group.title }}
+{% endblock %}
+
 {% block content%}
   <h1>{{ group.title }}</h1>
   <p>{{ group.description }}</p>
@@ -8,12 +12,3 @@
     {% if not forloop.last %}<hr>{% endif %}
   {% endfor %} 
 {% endblock %}   
-
-{% block foot %}
-  <div class="footer-copyright text-center py-3">© 2020 Copyright 
-    <p>
-      <span style="color:red">Ya
-      </span>tube
-    </p> 
-  </div>
-{% endblock %}  

@@ -14,7 +14,7 @@ def index(request):
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = group.posts.order_by("-pub_date")[:NUMBER_OF_VALUES]
+    posts = group.posts.all()[:NUMBER_OF_VALUES]
     context = {
         "group": group,
         "posts": posts,

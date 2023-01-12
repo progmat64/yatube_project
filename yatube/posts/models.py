@@ -1,8 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
-# Create your models here.
-
 User = get_user_model()
 
 
@@ -16,7 +14,7 @@ class Group(models.Model):
         verbose_name_plural = "Groups"
 
     def __str__(self):
-        return self.title
+        return self.title[:30]
 
 
 class Post(models.Model):
@@ -38,4 +36,4 @@ class Post(models.Model):
         ordering = ["-pub_date"]
 
     def __str__(self):
-        return self.text
+        return self.text[:30]

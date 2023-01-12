@@ -11,12 +11,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/fav/favicon-16x16.png' %}">
     <meta name="msapplication-TileColor" content="#000">
     <meta name="theme-color" content="#ffffff">
+
+    <title>
+      {% block title %}
+      {% endblock %}
+    </title>
     
-    {% block title %}
-      <title>
-        {{ group.title }}
-      </title>
-    {% endblock %}
   </head>
 
   <body>
@@ -33,9 +33,7 @@
     </main>
 
     <footer class="border-top text-center py-3">
-        {% block foot %}
         {% include 'includes/footer.html' %}
-        {% endblock %}
     </footer>
   </body>
 </html>
