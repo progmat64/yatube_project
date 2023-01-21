@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     "posts",
     'users.apps.UsersConfig',
     'core.apps.CoreConfig',
+    'about',
 ]
 
 MIDDLEWARE = [
@@ -45,8 +46,11 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                # Вот оно, нужное:
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Добавлен контекст-процессор
+                'core.context_processors.year.year',
             ],
         },
     },
